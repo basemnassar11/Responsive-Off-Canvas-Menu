@@ -1,0 +1,323 @@
+//colors
+$white_90: rgba(255,255,255,.9);
+$color_tundora_approx: #444444;
+$color_cerulean_approx: #00aeef;
+$color_log_cabin_approx: #222222;
+$color_mountain_mist_approx: #929292;
+$white: white;
+$color_mine_shaft_approx: #333333;
+$white_10: rgba(255,255,255,.1);
+$red: red;
+$white_0: rgba(255,255,255,.0);
+
+//@extend-elements
+//original selectors
+//#menu-icon.open span:nth-child(1), #menu-icon.open span:nth-child(6)
+%extend_1 {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(45deg);
+}
+
+//original selectors
+//#menu-icon.open span:nth-child(2), #menu-icon.open span:nth-child(5)
+%extend_2 {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(-45deg);
+}
+
+//original selectors
+//ul#menu, #menu ul
+%extend_3 {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+#menu-toggle {
+	position: fixed;
+	padding: 20px 20px 20px 65px;
+	width: 100%;
+	left: 0;
+    top: 55px;
+	background: transparent;
+	color: $color_tundora_approx;
+	z-index: 5;
+	&.open {
+		left: 350px;
+	}
+}
+#menu-icon {
+	width: 45px;
+	height: 35px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	span {
+		display: block;
+		position: absolute;
+		height: 5px;
+		width: 50%;
+		background: $color_cerulean_approx;
+		opacity: 1;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: rotate(0deg);
+		-webkit-transition: .25s ease-in-out;
+		-moz-transition: .25s ease-in-out;
+		-o-transition: .25s ease-in-out;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: .25s ease-in-out;
+		&:nth-child(even) {
+			left: 50%;
+		}
+		&:nth-child(odd) {
+			left: 0;
+		}
+		&:nth-child(1) {
+			top: 5px;
+		}
+		&:nth-child(2) {
+			top: 5px;
+		}
+		&:nth-child(3) {
+			top: 15px;
+		}
+		&:nth-child(4) {
+			top: 15px;
+		}
+		&:nth-child(5) {
+			top: 25px;
+		}
+		&:nth-child(6) {
+			top: 25px;
+		}
+	}
+	&.open span {
+		&:nth-child(1) {
+			@extend %extend_1;
+			left: 5px;
+			top: 8px;
+		}
+		&:nth-child(6) {
+			@extend %extend_1;
+			left: calc(50% - 5px);
+			top: 21px;
+		}
+		&:nth-child(2) {
+			@extend %extend_2;
+			left: calc(50% - 5px);
+			top: 8px;
+		}
+		&:nth-child(5) {
+			@extend %extend_2;
+			left: 5px;
+			top: 21px;
+		}
+		&:nth-child(3) {
+			left: -50%;
+			opacity: 0;
+		}
+		&:nth-child(4) {
+			left: 100%;
+			opacity: 0;
+		}
+	}
+}
+#menu {
+	background: $color_log_cabin_approx;
+	width: 350px;
+	position: fixed;
+    top: 55px;
+	bottom: 0;
+	left: -350px;
+	z-index: 4;
+	ul {
+		@extend %extend_3;
+	}
+	li {
+		position: relative;
+	}
+	&.open {
+		left: 0;
+	}
+	a {
+		display: block;
+		padding: 15px;
+		text-decoration: none;
+		color: $color_mountain_mist_approx;
+		&:hover {
+			color: $white;
+		}
+	}
+	> .parent {
+		> ul {
+			position: fixed;
+            top: 55px;
+			bottom: 0;
+			left: -100%;
+			width: 320px;
+			> .parent > ul {
+				position: fixed;
+                top: 55px;
+				bottom: 0;
+				left: -100%;
+				width: 290px;
+				.parent > ul {
+					position: fixed;
+                    top: 55px;
+					bottom: 0;
+					left: -100%;
+                    width: 260px;
+                    
+                    .parent > ul {
+                        position: fixed;
+                        top: 55px;
+                        bottom: 0;
+                        left: -100%;
+                        width: 230px;
+                        .parent > ul {
+                            position: fixed;
+                            top: 55px;
+                            bottom: 0;
+                            left: -100%;
+                            width: 200px;
+                        }
+                    }
+				}
+			}
+		}
+		&.open > ul {
+			left: 0;
+			background: $color_mine_shaft_approx;
+			> .parent.open > ul {
+				left: 0;
+				background: $color_log_cabin_approx;
+				> .parent.open > ul {
+					left: 0;
+                    background: $color_tundora_approx;
+                    > .parent.open > ul {
+                        left: 0;
+                        background: $color_log_cabin_approx;
+                        > .parent.open > ul {
+                            left: 0;
+                            background: $color_tundora_approx;
+                        }
+                    }
+
+				}
+			}
+		}
+	}
+}
+.submenu-toggle {
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	text-indent: -5000px;
+	overflow: hidden;
+	&.open {
+		background: $white_10;
+		height: 100%;
+		z-index: 5000;
+		top: 0;
+		&:before {
+			right: 14px;
+		}
+		&:after {
+			left: 14px;
+		}
+	}
+	&:before {
+		-webkit-transition: .5s ease-in-out;
+		content: '';
+		display: block;
+		position: absolute;
+		height: 8px;
+		width: 8px;
+		top: 15px;
+		right: 15px;
+		border-top: 5px solid $color_mountain_mist_approx;
+		border-right: 5px solid $color_mountain_mist_approx;
+		-webkit-transform: rotate(45deg);
+	}
+	&:after {
+		-webkit-transition: .5s ease-in-out;
+		content: '';
+		display: block;
+		position: absolute;
+		height: 8px;
+		width: 8px;
+		top: 15px;
+		left: 50px;
+		border-top: 5px solid $color_mountain_mist_approx;
+		border-right: 5px solid $color_mountain_mist_approx;
+		-webkit-transform: rotate(-135deg);
+	}
+	&:hover {
+		&:before {
+			border-color: $white;
+		}
+		&:after {
+			border-color: $white;
+		}
+	}
+}
+#menu-overlay {
+	position: fixed;
+	
+	top: 55px;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	background: $white_0;
+	&.open {
+		z-index: 3;
+		background: $white_90;
+	}
+}
+#page-content {
+	padding: 20px;
+	max-width: 960px;
+	margin: 0 auto;
+	position: relative;
+	left: 0;
+	z-index: 1;
+	&.open {
+		left: 400px;
+	}
+	h1 {
+		font-size: 30px;
+		font-weight: 100;
+		padding-bottom: 20px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+ul#menu {
+	@extend %extend_3;
+}

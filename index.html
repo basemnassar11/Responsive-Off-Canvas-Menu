@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>jQuery 3-Tier Slide Menu Demo</title>
+  <style>
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 15px;
+      -webkit-transition: .5s ease-in-out;
+      -moz-transition: .5s ease-in-out;
+      -o-transition: .5s ease-in-out;
+      transition: .5s ease-in-out;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      padding: 45px 0 0 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    /* MENU TOGGLE STYLES */
+  </style>
+  <link rel="stylesheet" href="ncss/custom.css">
+</head>
+
+<body>
+  <div id="menu-toggle">
+    <div id="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+  </div>
+  <div id="menu-overlay"></div>
+  <ul id="menu">
+    <li><a href="#">Tier 1</a></li>
+    <li><a href="#">No children...</a></li>
+    <li><a href="#">Hey - this one has some kids!</a>
+      <ul>
+        <li><a href="#">I'm a kid!</a></li>
+        <li><a href="#">I'm a kid!</a></li>
+        <li><a href="#">Got kids of my own...</a>
+          <ul>
+            <li><a href="#">I'm a grandkid!</a></li>
+            <li><a href="#">I'm a grandkid!</a></li>
+            <li><a href="#">I'm a grandkid!</a>
+              <ul>
+                <li><a href="#">I'm ad grandkid!</a></li>
+                <li><a href="#">I'm ad grandkid!</a></li>
+                <li><a href="#">I'm ad grandkid!</a>
+                  <ul>
+                    <li><a href="#">I'm adsss grandkid!</a></li>
+                    <li><a href="#">I'm adss grandkid!</a></li>
+                    <li><a href="#">I'm ad ssgrandkid!</a>
+                      <ul>
+                        <li><a href="#">I'me adsss grandkid!</a></li>
+                        <li><a href="#">I'me adss grandkid!</a></li>
+                        <li><a href="#">I'm dad ssgrandkid!</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div id="page-content">
+    <h1>jQuery 3-Tier Slide Menu Demo</h1>
+    <div class="jquery-script-ads">
+      <script type="text/javascript">
+        <!--
+        google_ad_client = "ca-pub-2783044520727903";
+        /* jQuery_demo */
+        google_ad_slot = "2780937993";
+        google_ad_width = 728;
+        google_ad_height = 90;
+        //
+        -->
+      </script>
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ligula lacus, volutpat non elementum a, auctor
+      quis risus. Donec mattis, tortor eu tincidunt ultricies, sem enim tincidunt leo, quis dapibus eros tortor vel
+      velit. Maecenas lacus ipsum, bibendum sit amet mollis eu, convallis et metus. Donec varius iaculis sodales. Fusce
+      dignissim aliquet nunc eu ultricies. Donec eget diam eget tortor tincidunt sagittis nec cursus quam. Cras
+      porttitor vel mi sit amet tempor. In sit amet magna ac purus luctus porttitor non tristique augue. Cras eget dui
+      congue lectus aliquet euismod commodo at eros. Integer congue hendrerit blandit. Curabitur rutrum diam id rhoncus
+      blandit. Sed tempus mi in mi iaculis, sed vulputate odio fringilla. Nam ut justo eget sem ultrices pellentesque.
+      Quisque nec condimentum diam, facilisis interdum arcu. Suspendisse potenti.</p>
+    <p>Sed eget turpis facilisis, dignissim mauris sed, tempus tortor. Nam et risus odio. Quisque at sem et elit
+      ullamcorper porta sed eu massa. Morbi hendrerit, enim eget iaculis sodales, enim justo auctor velit, id rhoncus
+      ligula lacus at mi. Integer luctus lacinia elit in ultrices. Mauris semper neque vel eros tempor hendrerit.
+      Phasellus tincidunt velit mi, sit amet rhoncus quam egestas et. Pellentesque urna orci, aliquet vel libero sed,
+      pretium luctus nulla. Donec suscipit tristique aliquet. Etiam sit amet nunc pulvinar, volutpat ipsum eu, tincidunt
+      enim. Etiam tristique nunc ut velit pulvinar, in sodales libero hendrerit.</p>
+    <p>Maecenas euismod urna id dignissim ullamcorper. Morbi ipsum nunc, imperdiet ullamcorper accumsan sed, semper
+      vitae eros. Phasellus auctor sit amet nunc vel ornare. Suspendisse sed vestibulum dolor. Praesent diam dolor,
+      rutrum quis ipsum sit amet, dapibus vehicula risus. Nullam iaculis ligula ac mauris pretium, ut vehicula quam
+      scelerisque. Sed a pretium metus, ac aliquam neque. Ut orci metus, congue vitae tristique ut, tempus et nunc.
+      Curabitur porta purus at tortor consectetur gravida. Quisque convallis vulputate magna quis mollis.</p>
+    <p>Sed tincidunt eget nisi id condimentum. Fusce congue purus sed arcu mattis, vel rhoncus nunc aliquam. Suspendisse
+      ornare hendrerit molestie. Ut fermentum a odio id viverra. Duis sed enim massa. Vivamus tellus purus, tempor a
+      nibh at, vulputate varius nibh. Aenean et rutrum nunc. Ut aliquet diam id quam accumsan consectetur. Phasellus
+      venenatis, enim a pellentesque venenatis, tellus felis rhoncus ante, nec sagittis lacus nulla eu purus. Nulla
+      dictum imperdiet augue, tempus consectetur mi hendrerit placerat. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit. Fusce eget pretium eros. Vestibulum semper in mi non posuere. Cras sit amet nibh diam. Vivamus
+      dignissim ligula vel faucibus feugiat. Sed ac dolor scelerisque, pharetra ipsum id, sagittis lorem.</p>
+    <p>Nam ut faucibus nisl, in facilisis ipsum. Nullam a turpis viverra, vestibulum arcu consequat, varius ante. Nam ut
+      nibh iaculis, aliquam lectus scelerisque, dignissim sem. In bibendum magna dignissim purus lacinia, et lacinia sem
+      pretium. Integer laoreet, eros a consectetur vehicula, elit sem tincidunt augue, non scelerisque lorem nisl nec
+      lorem. Etiam condimentum massa a massa mollis eleifend. Ut facilisis justo eu dolor convallis, semper eleifend
+      sapien euismod. Donec vitae bibendum mi. Praesent in laoreet augue. Vivamus turpis libero, pellentesque
+      consectetur urna vitae, porttitor auctor leo.</p>
+  </div>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+  <script>
+    $(document).ready(function () {
+
+      // NAVIGATION MENU
+
+      // menu icon states, opening main nav
+      $('#menu-icon').click(function () {
+        $(this).toggleClass('open');
+        $('#menu,#menu-toggle,#page-content,#menu-overlay').toggleClass('open');
+        $('#menu li,.submenu-toggle').removeClass('open');
+      });
+
+      // clicking on overlay closes menu
+      $('#menu-overlay').click(function () {
+        $('*').removeClass('open');
+      });
+
+      // add child menu toggles and parent class
+      $('#menu li').has('ul').addClass('parent').prepend('<div class="submenu-toggle">open</div>');
+
+      // toggle child menus
+      $('.submenu-toggle').click(function () {
+        var currentToggle = $(this);
+        currentToggle.parent().toggleClass('open');
+        currentToggle.toggleClass('open');
+      });
+    });
+  </script>
+</body>
+
+</html>
